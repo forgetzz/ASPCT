@@ -6,20 +6,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "ASPCT.",
   description: "THE ONLY ONE FASHION",
-  icons: "/assets/1.png"
-
+  icons: {
+    icon: "/assets/1.png"
+  }
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html >
-      <body
-
-      >
+    <html lang="id">
+      <body className="bg-gray-50 text-gray-900">
         {children}
       </body>
     </html>
