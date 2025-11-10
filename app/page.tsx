@@ -147,10 +147,10 @@ const Hero: React.FC = () => {
         </p>
         <div className="mt-6 flex gap-3">
           <a className="bg-white text-black px-5 py-3 rounded font-medium hover:bg-gray-200 transition" href="#shop">
-            Belanja Sekarang
+            Buy Now
           </a>
           <a className="border px-5 py-3 rounded font-medium hover:bg-white/20 transition" href="#about">
-            Tentang Kami
+            About Us
           </a>
         </div>
       </div>
