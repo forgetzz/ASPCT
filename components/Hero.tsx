@@ -54,7 +54,7 @@ const SLIDES = [
   "/assets/hitam3.jpeg",
   "/assets/putih4.jpeg",
   "/assets/hitam1.jpeg",
- 
+
 ];
 
 const currency = (value: number) =>
@@ -129,9 +129,11 @@ const Hero: React.FC = () => {
           <Image
             src={slide}
             alt={`Slide ${index + 1}`}
-            fill
+            width={600}
+            height={350}
             priority={index === 0}
-            style={{ objectFit: "cover" }}
+            loading={index === 0 ? "eager" : "lazy"}
+            style={{ objectFit: "cover", borderRadius: "12px" }}
           />
         </div>
       ))}
@@ -170,9 +172,11 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         <Image
           src={product.image}
           alt={product.name}
-          fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          style={{ objectFit: "cover" }}
+          width={400}
+          height={400}
+          loading="lazy"
+          className="object-cover rounded-lg"
+          sizes="(max-width: 768px) 50vw, 25vw"
         />
       </div>
       <div className="p-4">
