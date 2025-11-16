@@ -54,9 +54,7 @@ const SLIDES = [
   "/assets/hitam3.jpeg",
   "/assets/putih4.jpeg",
   "/assets/hitam1.jpeg",
-  "/assets/putih5.jpeg",
-  "/assets/hitam2.jpeg",
-  "/assets/hitam6.jpeg",
+ 
 ];
 
 const currency = (value: number) =>
@@ -140,7 +138,7 @@ const Hero: React.FC = () => {
 
       <div className="absolute inset-0 bg-black/30 flex flex-col justify-center items-center text-center text-white px-4">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md">
-          ASPCT <br />NEW GENERETION
+          ASPCT <br />NEW GENERATION
         </h1>
         <p className="max-w-lg text-sm md:text-lg opacity-90">
           Where every angle becomes a reflection of who you are.
