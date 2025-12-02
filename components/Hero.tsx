@@ -172,7 +172,7 @@ const Hero: React.FC = () => {
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
   const whatsapp = () => {
-    const phone = "6289602203266"; // ganti dengan nomor kamu tanpa + atau 0 di depan
+    const phone = "62895337674578"; // ganti dengan nomor kamu tanpa + atau 0 di depan
     const message = "Halo, saya tertarik dengan produk ASPCT.LABS";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
