@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
 import { Mail, Instagram, Facebook, Music } from "lucide-react";
+import { useRouter } from "next/navigation";
 // Homepage Next.js + TypeScript dengan Navbar responsif & slideshow hero section
 // Pastikan Tailwind CSS aktif di proyek.
 
@@ -31,9 +32,9 @@ const PRODUCTS: Product[] = [
   },
   {
     id: "p2",
-    name: "ASPCT BLACK (Back)",
+    name: "ASPCT BLACK (BACK)",
     price: 130000,
-    image: "/assets/2.png",
+    image: "/assets/2.jpeg",
   },
   {
     id: "p3",
@@ -46,14 +47,14 @@ const PRODUCTS: Product[] = [
 ];
 
 const SLIDES = [
-  "/assets/putih1.jpeg",
-  "/assets/hitam4.jpeg",
-  "/assets/putih2.jpeg",
-  "/assets/hitam5.jpeg",
-  "/assets/putih3.jpeg",
-  "/assets/hitam3.jpeg",
-  "/assets/putih4.jpeg",
-  "/assets/hitam1.jpeg",
+  "/assets/6.jpeg",
+  "/assets/7.jpeg",
+  "/assets/8.jpeg",
+  "/assets/9.jpeg",
+  "/assets/10.jpeg",
+  "/assets/11.jpeg",
+  "/assets/12.jpeg",
+  "/assets/13.jpeg",
 
 ];
 
@@ -62,6 +63,10 @@ const currency = (value: number) =>
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const router = useRouter()
+  const pindah = () => {
+    router.push("/app/Blog.tsx")
+  }
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -70,9 +75,14 @@ const Navbar: React.FC = () => {
         </div>
 
         <nav className="hidden md:flex gap-6 text-gray-700 text-sm">
-          <a href="#" className="hover:text-black transition">Home</a>
-          <a href="#shop" className="hover:text-black transition">Shop</a>
-          <a href="#about" className="hover:text-black transition">About</a>
+          <button>
+            <a href="../app/Blog.tsx" className="hover:text-black transition">Home</a>
+          </button>
+          <button onClick={pindah}>
+            <a href="#shop" className="hover:text-black transition">Blog</a>
+          </button>
+          <a href="#about" className="hover:text-black transition">About Us</a>
+          <a href="#contact" className="hover:text-black transition">Galery</a>
           <a href="#contact" className="hover:text-black transition">Contact</a>
         </nav>
 
@@ -119,7 +129,8 @@ const Hero: React.FC = () => {
 
 
   return (
-    <section className="relative h-[70vh] w-full overflow-hidden">
+    <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
+
       {SLIDES.map((slide, index) => (
         <div
           key={index}
@@ -129,12 +140,12 @@ const Hero: React.FC = () => {
           <Image
             src={slide}
             alt={`Slide ${index + 1}`}
-            width={600}
-            height={350}
+            fill
             priority={index === 0}
             loading={index === 0 ? "eager" : "lazy"}
-            style={{ objectFit: "cover", borderRadius: "12px" }}
+            className="object-cover w-full h-full"
           />
+
         </div>
       ))}
 
@@ -162,7 +173,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
   const whatsapp = () => {
     const phone = "6289602203266"; // ganti dengan nomor kamu tanpa + atau 0 di depan
-    const message = "Halo, saya tertarik dengan produk ASPCT.STOCKROOM!";
+    const message = "Halo, saya tertarik dengan produk ASPCT.LABS";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
@@ -233,7 +244,7 @@ const Home: NextPage = () => {
 
           {/* Left side */}
           <div className="text-center md:text-left">
-            <h2 className="text-xl font-bold tracking-widest text-white">ASPCT.STOCKROOM</h2>
+            <h2 className="text-xl font-bold tracking-widest text-white">ASPCT.LABS</h2>
             <p className="text-sm text-gray-500 mt-1">
               © {new Date().getFullYear()} ASPCT. All rights reserved.
             </p>
@@ -243,14 +254,14 @@ const Home: NextPage = () => {
           <div className="flex flex-col items-center md:items-end gap-3 text-sm">
             <div className="flex items-center gap-2">
               <Mail size={16} />
-              <a href="mailto:aspctstreetwear@gmail.com" className="hover:text-white">
-                aspctstreetwear@gmail.com
+              <a href="mailto:aspctlabs@gmail.com" className="hover:text-white">
+                aspctlabs@gmail.com
               </a>
             </div>
 
             <div className="flex items-center gap-4 mt-1">
               <a
-                href="https://www.instagram.com/aspct.stockroom?igsh=d25nb3p6Mm0xeHg4"
+                href="https://www.instagram.com/aspct.labs?igsh=d25nb3p6Mm0xeHg4"
                 className="hover:text-white flex items-center gap-1"
               >
                 <Instagram size={18} />
